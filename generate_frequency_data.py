@@ -71,6 +71,6 @@ def main():
         word_data[word] = score
     
 
-    write_data('Assets/alt_data.json', word_data)
+    write_data('Assets/frequency_data.json', word_data)
 if __name__ == '__main__':
     main()

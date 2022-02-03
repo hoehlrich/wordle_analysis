@@ -1,6 +1,7 @@
 # !/usr/bin/env
 # -*- coding: utf-8 -*-
 
+from asyncore import write
 import json
 import string
 from json_helpers import *
@@ -139,11 +140,7 @@ def take_guess_input(word, keyboard):
         
 
 def main():
-    temp = load_asset('Assets/alt_data.json')
-    words = []
-
-    for word in temp:
-        words.append(word)
+    words = list(load_asset('Assets/frequency_data.json').keys())
 
     answers = load_asset('Assets/answers.json')['data']
 
@@ -164,7 +161,6 @@ def main():
 
         print(f'Words: {words[:10]}')
         print(f'Answers: {answers[:10]}')
-
 
 if __name__ == '__main__':
     main()
